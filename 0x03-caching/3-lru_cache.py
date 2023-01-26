@@ -16,7 +16,8 @@ class LRUCache(BaseCaching):
                 self.cache_data the item value for the key"""
         if not key or not item:
             return
-        if len(self.cache_data) > BaseCaching.MAX_ITEMS - 1 and (key not in self.cache_data.keys()):
+        if len(self.cache_data) > BaseCaching.MAX_ITEMS - 1\
+                and (key not in self.cache_data.keys()):
             print('DISCARD: {}'.format(min(self.keyMap, key=self.keyMap.get)))
             del self.cache_data[min(self.keyMap, key=self.keyMap.get)]
             del self.keyMap[min(self.keyMap, key=self.keyMap.get)]

@@ -42,7 +42,7 @@ class Server:
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """get hyper functions"""
         assert type(index) == int and type(page_size) == int
-        assert len(self.indexed_dataset()) > index >= 0 
+        assert len(self.indexed_dataset()) > index >= 0
         pages = []
         next_index = index + page_size
         for i in range(index, index + page_size):

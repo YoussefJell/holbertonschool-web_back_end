@@ -26,6 +26,8 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """gets the requested page items"""
+        assert type(page) == int or type(page_size) == int
+        assert page > 0 or page_size > 0
         self.__dataset: List[List] = self.dataset()
         indxRange: tuple = index_range(page, page_size)
         range1: int = indxRange[0]

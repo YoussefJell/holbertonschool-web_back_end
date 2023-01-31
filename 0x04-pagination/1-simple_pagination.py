@@ -32,7 +32,7 @@ class Server:
         indxRange: tuple = index_range(page, page_size)
         range1: int = indxRange[0]
         range2: int = indxRange[1]
-        if range1 > len(self.__dataset) or range2 > len(self.__dataset):
+        if range1 >= len(self.dataset()):
             return []
         return self.__dataset[range1:range2]
 

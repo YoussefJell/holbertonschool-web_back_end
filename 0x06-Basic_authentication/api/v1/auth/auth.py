@@ -8,6 +8,8 @@ from typing import List, TypeVar
 
 class Auth:
 
+    """ comment """
+
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         if path is None:
             return True

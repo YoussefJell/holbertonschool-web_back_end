@@ -9,7 +9,7 @@ from models.user import User
 
 
 class BasicAuth(Auth):
-    """ comment class """
+    """ comment class comment class comment class  """
 
     def extract_base64_authorization_header(self, authorization_header: str
                                             ) -> str:
@@ -26,7 +26,7 @@ class BasicAuth(Auth):
     def decode_base64_authorization_header(self,
                                            base64_authorization_header: str
                                            ) -> str:
-        """ decoded b64 """
+        """ decoded b64 decoded b64 decoded b64 decoded b64 """
         if base64_authorization_header is None:
             return None
         if not type(base64_authorization_header) == str:
@@ -40,7 +40,7 @@ class BasicAuth(Auth):
 
     def extract_user_credentials(self, decoded_base64_authorization_header: str
                                  ) -> tuple(str, str):
-        """ return mail n pass """
+        """ return mail n pass return mail n pass return mail n pass """
         if decoded_base64_authorization_header is None:
             return None, None
         if not type(decoded_base64_authorization_header) == str:
@@ -52,7 +52,7 @@ class BasicAuth(Auth):
 
     def user_object_from_credentials(self, user_email: str,
                                      user_pwd: str) -> TypeVar('User'):
-        """ return user if correct """
+        """ return user if correct return user if correct return user if correct """
         if user_email is None or not isinstance(user_email, str):
             return None
         if user_pwd is None or not isinstance(user_pwd, str):

@@ -21,8 +21,8 @@ elif AUTH_TYPE == 'basic_auth':
 
 
 @app.before_request
-def before_request() -> str:
-    """ handle auth """
+def before_req() -> str:
+    """ handle auth handle auth """
     if auth is None:
         return
     excluded_paths = ['/api/v1/status/',

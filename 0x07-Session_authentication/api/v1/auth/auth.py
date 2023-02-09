@@ -34,7 +34,9 @@ class Auth():
     def current_user(self, request=None) -> TypeVar('User'):
         """ comment """
         return None
+
     def session_cookie(self, request=None):
+        """ comment time """
         if request is None:
             return None
         _my_session_id = getenv("SESSION_NAME")

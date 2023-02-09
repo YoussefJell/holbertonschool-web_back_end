@@ -20,3 +20,9 @@ class SessionAuth(Auth):
         sess_id = str(uuid4())
         self.user_id_by_session_id[sess_id] = user_id
         return sess_id
+
+    def user_id_for_session_id(self, session_id: str = None) -> str:
+        """ user_id comment """
+        if session_id is None or type(session_id) != str:
+            return None
+        return self.user_id_by_session_id.get(session_id)

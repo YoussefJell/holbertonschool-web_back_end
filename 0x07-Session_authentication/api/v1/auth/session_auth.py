@@ -13,6 +13,7 @@ class SessionAuth(Auth):
     user_id_by_session_id = {}
 
     def create_session(self, user_id: str = None) -> str:
+        """ session comment """
         if user_id == None or type(user_id) != str:
             return None
         sess_id = str(uuid4())

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """ DB module """
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.session import Session
 from sqlalchemy.orm.exc import NoResultFound
@@ -36,19 +35,19 @@ class DB:
 
     def find_user_by(self, **kwargs) -> User:
         """ finds a user from the db """
-        for item in kwargs.keys():
-            if item not in User.__table__.columns:
-                raise InvalidRequestError
-        user = self._session.query(User).filter_by(**kwargs).first()
-        if user is None:
+        try:
+            record = self._session.query(User).filter_by(**kwargs).first()
+        except TypeError:
+            raise InvalidRequestError
+        if record is None:
             raise NoResultFound
-        return user
+        return record
 
     def update_user(self, user_id: int, **kwargs) -> None:
-        """ update user"""
-        _id = self.find_user_by(id=user_id)
+        """ update user """
+        usr = self.find_user_by(id=user_id)
         for key, value in kwargs.items():
-            if not hasattr(_id, key):
+            if not hasattr(usr, key):
                 raise ValueError
-            setattr(_id, key, value)
+            setattr(usr, key, value)
         self._session.commit()

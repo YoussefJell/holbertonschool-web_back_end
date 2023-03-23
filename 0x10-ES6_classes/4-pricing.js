@@ -10,8 +10,8 @@ export default class Pricing {
     return this._amount;
   }
 
-  set amount(value) {
-    if (typeof amount === 'number') this._amount = value;
+  set amount(amount) {
+    if (typeof amount === 'number') this._amount = amount;
   }
 
   get currency() {

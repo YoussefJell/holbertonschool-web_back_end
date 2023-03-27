@@ -6,7 +6,7 @@ export default function updateStudentGradeByCity(listOfStudents, city, newGrades
         (newGrade) => newGrade.studentId === student.id,
       );
 
-      let grade = gradeFilter[0] ? gradeFilter[0].grade : 'N/A';
+      const grade = gradeFilter[0] ? gradeFilter[0].grade : 'N/A';
 
       return {
         ...student,

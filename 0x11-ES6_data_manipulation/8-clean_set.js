@@ -5,9 +5,9 @@ export default function cleanSet(set, startString) {
   }
   set.forEach((i) => {
     if (i && i.startsWith(startString)) {
-      res += `${i.slice(startString.length)}-`
-    };
+      res += `${i.slice(startString.length)}-`;
+    }
   });
-  res = res.slice(0, res.length - 1)
+  res = res.slice(0, res.length - 1);
   return res;
 }

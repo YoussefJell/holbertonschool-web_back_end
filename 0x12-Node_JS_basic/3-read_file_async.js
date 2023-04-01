@@ -1,4 +1,3 @@
-const { response } = require('express');
 const fs = require('fs');
 
 module.exports = async function countStudents(path) {
@@ -26,7 +25,6 @@ module.exports = async function countStudents(path) {
       for (const key of Object.keys(fields)) {
         console.log(`Number of students in ${key}: ${fields[key].length}. List: ${fields[key].join(', ')}`);
         response += `Number of students in ${key}: ${fields[key].length}. List: ${fields[key].join(', ')}\n`;
-
       }
       resolve(response);
     });

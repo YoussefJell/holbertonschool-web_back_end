@@ -6,11 +6,11 @@ export default class StudentController {
     response.set('Content-Type', 'text/html');
     readDatabase(path)
       .then((data) => {
-        let resp = []
-        resp.push('This is the list of our students')
+        let resp = [];
+        resp.push('This is the list of our students');
         for (const key of Object.keys(data)) {
           console.log(data);
-          resp.push(`Number of students in ${key}: ${data[key].length}. List: ${data[key].join(', ')}`)
+          resp.push(`Number of students in ${key}: ${data[key].length}. List: ${data[key].join(', ')}`);
         }
         response.status(200).send(resp.join('\n'));
       })

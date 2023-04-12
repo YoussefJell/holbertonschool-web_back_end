@@ -10,7 +10,6 @@ cli.on('connect', () => {
   console.log('Redis client connected to the server');
 });
 
-// Task 4
 
 const KEYHASH = 'HolbertonSchools';
 

@@ -10,7 +10,6 @@ cli.on('connect', () => {
   console.log('Redis client connected to the server');
 });
 
-// Task 1
 function setNewSchool(schoolName, value) {
   cli.set(schoolName, value, redis.print);
 }
